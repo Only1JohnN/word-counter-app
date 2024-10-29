@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Counter</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <style>
+        body {
+            background-color: #f4f4f4; /* Light mode default background */
+            color: #000; /* Light mode default text color */
+            transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+        }
+        .dark-mode {
+            background-color: #121212; /* Dark background */
+            color: #ffffff; /* Light text */
+        }
+    </style>
+    
+</head>
+<body>
+    <header>
+        <div class="toggle-container" id="toggle">
+            <img id="toggle-icon" class="toggle-icon" src="{% static 'icons/sun.svg' %}" alt="Toggle Dark Mode">
+        </div>
+    </header>
+    <div class="container">
+        <h1>Word Counter</h1>
+        <form action="{% url 'word_counter' %}" method="post">
+            {% csrf_token %}
+            <textarea name="text" id="text" placeholder="Enter your text here..." oninput="autoResize(this)"></textarea>
+            <br>
+            <button type="submit">Count Words</button>
+        </form>
+    </div>
+    <footer>
+        <p>Made by Only1JohnN</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/only1.johnn/" target="_blank">
+                <img src="{% static 'icons/instagram.svg' %}" alt="Instagram" class="social-icon">
+            </a>
+            <a href="https://www.linkedin.com/in/john-adeniyi/" target="_blank">
+                <img src="{% static 'icons/linkedin.svg' %}" alt="LinkedIn" class="social-icon">
+            </a>
+            <a href="https://github.com/Only1JohnN" target="_blank">
+                <img src="{% static 'icons/github.svg' %}" alt="GitHub" class="social-icon">
+            </a>
+        </div>
+    </footer>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script>
+        function autoResize(textarea) {
+            textarea.style.height = 'auto'; // Reset height
+            textarea.style.height = Math.min(textarea.scrollHeight, 480) + 'px'; // Limit to max height
+        }
+    </script>
+</body>
+</html>

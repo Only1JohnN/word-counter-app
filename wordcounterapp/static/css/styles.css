@@ -1,0 +1,129 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and text color */
+}
+
+.dark-mode {
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* Light text */
+}
+
+header {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.toggle-container {
+    cursor: pointer;
+}
+
+.toggle-icon {
+    width: 30px; /* Size of the toggle icon */
+    padding: 30;
+    height: 30px;
+    transition: transform 0.3s; /* Animation for hover effect */
+}
+
+.toggle-icon:hover {
+    transform: scale(1.1); /* Slightly enlarge the icon on hover */
+}
+
+.dark-mode .toggle-icon {
+    filter: brightness(0) invert(1); /* Change color to white in dark mode */
+}
+
+
+.container {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+.dark-mode .container {
+    background-color: #1e1e1e; /* Dark background for container */
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+textarea {
+    width: 300px; /* Fixed width for the textarea */
+    max-height: 480px; /* Maximum height for scrolling */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: none; /* Disable resizing */
+    overflow-y: auto; /* Enable vertical scrolling */
+    line-height: 1.2; /* Line height for wrapping */
+    transition: border-color 0.3s; /* Smooth transition for border color */
+}
+
+.dark-mode textarea {
+    border-color: #444; /* Dark border color */
+    background-color: #333; /* Dark background for textarea */
+    color: #ffffff; /* Light text color */
+}
+
+button {
+    width: 300px; /* Fixed width for the button */
+    padding: 10px;
+    background-color: #5cb85c; /* Bootstrap success color */
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px; /* Space between textarea and button */
+}
+
+button:hover {
+    background-color: #4cae4c; /* Darken on hover */
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f4f4f4; /* Light background for footer */
+}
+
+.dark-mode footer {
+    background-color: #121212; /* Dark background for footer */
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Space between icons */
+    margin-top: 10px;
+}
+
+.social-icon {
+    width: 24px; /* Size of the icons */
+    height: 24px;
+    transition: transform 0.3s; /* Animation for hover effect */
+}
+
+.social-icon:hover {
+    transform: scale(1.1); /* Slightly enlarge the icon on hover */
+}
+
+/* Dark mode social icon color */
+.dark-mode .social-icon {
+    filter: brightness(0) invert(1); /* Change color to white in dark mode */
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Count Result</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <div class="toggle-container" id="toggle">
+            <img id="toggle-icon" class="toggle-icon" src="{% static 'icons/sun.svg' %}" alt="Toggle Dark Mode">
+        </div>
+    </header>
+    <div class="container result-container">
+        <h1>Word Count Result</h1>
+        <div class="result-box">
+            <p>Your input contained:</p>
+            <h2 id="word-count">{{ word_count }} words</h2>
+        </div>
+        <form action="{% url 'index' %}" method="get">
+            <button type="submit" class="btn">Count Another</button>
+        </form>
+    </div>
+    <footer>
+        <p>Made by Only1JohnN</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/only1.johnn/" target="_blank">
+                <img src="{% static 'icons/instagram.svg' %}" alt="Instagram" class="social-icon">
+            </a>
+            <a href="https://www.linkedin.com/in/john-adeniyi/" target="_blank">
+                <img src="{% static 'icons/linkedin.svg' %}" alt="LinkedIn" class="social-icon">
+            </a>
+            <a href="https://github.com/Only1JohnN" target="_blank">
+                <img src="{% static 'icons/github.svg' %}" alt="GitHub" class="social-icon">
+            </a>
+        </div>
+    </footer>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
